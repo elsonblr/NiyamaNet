@@ -1,0 +1,111 @@
+Version 1
+---------
+1. Read files in a directory given, default
+2. Mention the total count of files
+3. Identify how many files to process
+4. Maintain history of processed files - (Caching files for x days V2)
+5. read the new files every time
+6. Once the file is read, read the rows one at a time
+7. take rules from rule file.
+8. Apply rules on every row
+9. print the output file
+
+Version 2
+---------
+0. Write a startup class or processor which would invoke input, core & output interfaces.
+1. Instead of history, application can alert the filename, date and sensitive data information.
+2. Can keep a tempory cache of read files, not to duplicate the effort.
+3. Instead of printing send output to a defined interface, big query, sms message, thir party system.
+4. Input can be an interface, meaning it can be standalone app, webservice, lamda function etc
+5. Core module will be same for all the interfaces
+6. Core module should have support for log scanning, db scanning, REST data scanning
+
+
+Version 3
+---------
+1. Provision to schedule the scans
+2. Provision to identify the peak time and avoid scanning during high load.
+3. Scan for IP address and domains
+
+Reference
+---------
+https://listings.pcisecuritystandards.org/documents/PCI_DSS-QRG-v3_2_1.pdf
+
+
+
+/*
+ Sensitive authentication data must not be stored after authorization (even if encrypted)
+2 Full track data from the magnetic stripe, equivalent data on the chip, or elsewhere.
+3 The three- or four-digit value printed on the front or back of a payment card
+4 Personal Identification Number entered by cardholder during a transaction, and/or encrypted PIN block present within the
+transaction message
+*/
+
+Search in database layer
+------------------------
+
+
+
+Search in the application layer
+-------------------------------
+Card/Debit card
+    card number - 14 to 19 digits of standard associations. custom ranges also possible, example : Enable Search(Y/N), VISA(Type), 16(Length), LunsCheck(Y/N), Type(Numeral, AlphaNumeral, SpecialCharectors)
+    name - Length(25), enable/disable
+    cvv - Length, encryption
+    expiry - DD/YY
+    chip (dip machines) - few encrypted details
+    magnetic strip (swipe based machines) - few encrypted details
+    File extension - .txt, .log
+    Data source path : file/ database/ aws / any source
+
+    reading the line and finding for various checks or patterns.
+    database : table & column level
+    aws : log or any other storage mechanism, log stored in aws bucket,
+
+
+
+Tap & Pay (NFC)
+    merchant device, application(phone user), card from user
+    limit for payment
+    Security is bank's and merchants responsibilty
+
+upi
+    VPA - virtual private address
+
+Type of applications to allow payments through which accepts above payment types.
+    cloud based applications
+    traditional applications - on primise
+    Usually deployment is done through automated process or through putty with relevant tools.
+    Softwares which i came across war deployment, jar deployment, micro service deployment using containers.
+
+   Storage of logs is either through physical machines drives or to a remote service through http call for retriving it from the central location.
+
+   log continous updates to a specific folder/directory,
+
+
+Additional info
+---------------
+
+/*
+// Lightening fast queries: quickly search logs at any scale with easy-to-use search filters or Lucene-based queries.
+// Powerful customized dashboards: Build dashboards to monitor trends in real time.
+// AI/ML: Automatically highlight logs that indicated significant production issues for other engineers.
+// Reduce storage costs: Cold Tier reduces the cost of compliance logs or aging logs without significantly impacting query speed.
+// Reduce data costs: easily identify and remove unneeded data to reduce costs.
+// Alerting: Continuously monitor critical app metrics and send notifications to PagerDuty, Slack, and many other endpoints.
+*/
+
+
+
+
+
+Date of birth
+Phone number
+
+
+TODO
+password from conf
+payload encryption
+3.Access to specific card holder data as per buisness
+4. system level auditing for card holder data
+5. regulor system updates

@@ -1,0 +1,131 @@
+
+    /*
+    public static void main(String[] args) {
+        String record = "";
+        String str = "+9740173665,test123.email@gmail.com,test1234.email@gmail.com98cedf5c-292f-48d5-82c8-2135105adf2f,test123.email@gmail.com 11-02-2022 18:57,10-12-2022 20:55,Collect Bot,1,,00:01:19,Ishaan,Male,26,Yes,Yes,No,Yes,No,IN(+91)-8802295001,28.6374801051,77.0970135927,1";
+
+        String numerals = extractInt(str);
+        String alphaNumeric = extractString(str);
+
+        //HashSet<String> alphaNumeric = extractString(str);
+
+        //System.out.println(Arrays.asList(numerals.split(" ")));
+        //System.out.println(Arrays.asList(alphaNumeric.split(" ")));
+
+//        Iterator<String> itr = alphaNumeric.iterator();
+
+//        while(itr.hasNext()) {
+//            System.out.println(" -- "+itr.next());
+//        }
+    }
+
+
+    /**
+     * @return
+     */
+
+
+    /**
+     * @param record
+     * @return
+     */
+    public static Map analyseData(String record) {
+       // String numerals = extractInt(record);
+        //String alphaNumeric = extractString(record);
+
+        Map map = new HashMap();
+        //List<String> myList = new ArrayList<String>(Arrays.asList(numerals.split(" ")));
+       // List<String> alphaNumericList = new ArrayList<String>(Arrays.asList(alphaNumeric.split(",")));
+
+//        // TODO : identify the ideal running time using the property file configuration.
+//        // TODO : identify the exsting load of the system before running the checks.
+        Map<String, Boolean> validMobiles = MobileValidator.analyseRecord(record);
+        //Map<String, Boolean> validCards = CardValidator.getValidCards(myList);
+        //Map<String, String> validOTPs = OTPValidator.getValidOTPs(myList);
+        //Map<String, Boolean> validEmails = EmailValidator.getValidEmails(myList);
+
+        map.putAll(validMobiles);
+//        map.putAll(validCards);
+//        map.putAll(validOTPs);
+//        map.putAll(validEmails);
+
+//        // TODO : Build alerting mechamism to the third party or monitoring people
+
+//        OTPValidator.getValidCards(myList);
+        // alert framework
+
+        /**
+         * Interface to an alert framework
+         * AlertClient client = implemenation(type of alert)
+         */
+//        try {
+//            System.out.println(width * height);
+//        } catch (Exception e) {
+//            System.out.println("in catch Exception : "+e.getLocalizedMessage());
+//            e.printPrintMessage();
+//            e.printStackTrace();
+//        }
+        //stats.put(validMobiles);
+        //System.out.println(map.size());
+        return map;
+    }
+
+
+
+
+    // Function to return the modified string
+    private static String extractInt(String str)
+    {
+        // Replacing every non-digit number
+        // with a space(" ")
+        str = str.replaceAll("[^0-9]", " "); // regular expression
+
+        // Replace all the consecutive white
+        // spaces with a single space
+        str = str.replaceAll(" +", " ");
+
+        if (str.equals(""))
+            return "-1";
+
+        return str;
+    }
+
+
+    // Function to return the modified string
+    private static String extractString(String str)
+    {
+
+//        public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
+//                Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+
+
+        // Replacing every non-digit number
+        // with a space(" ")
+        // String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
+//        str = str.replaceAll("^[A-Za-z0-9+_.-]+@(.+)$", " "); // regular expression
+        //HashSet<String> container = new HashSet<String>();
+
+//        Pattern p = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
+//        Matcher m = p.matcher(str);
+//
+//        while(m.find()) {
+//            container.add(m.group(1));
+//        }
+//
+//        return container;
+
+
+        // Replacing every non-digit number
+        // with a space(" ")
+        str = str.replaceAll("^[A-Za-z0-9+_.-@]", " "); // regular expression
+
+        // Replace all the consecutive white
+        // spaces with a single space
+        //str = str.replaceAll(" +", " ");
+
+       // if (str.equals(""))
+         //   return "-1";
+
+        return str;
+
+    }

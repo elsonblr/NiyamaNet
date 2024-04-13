@@ -1,0 +1,15 @@
+// read file, using a simple method TODO : Optimised for speed and heavy data
+                File file = new File(list[i].getName());
+                try {
+                    Scanner sc = new Scanner(file);
+                    while(sc.hasNextLine()) {
+                        System.out.println(" -- Processing --"+sc.nextLine());
+                        //Analyser.analyseData(String.valueOf(sc.nextLine()));
+
+                        //Map<String, Boolean> validMobiles = MobileValidator.analyseRecord(sc.nextLine());
+
+                    }
+                    // TODO : Plug the module here
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
